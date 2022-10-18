@@ -1,8 +1,4 @@
 # CloudParameters-DynamoDB
-This project implements API methods to retrieve keys and values from AWS Systems manager Parameter Store and Amazon DynamoDB using the AWS Java SDK.
-
-<h1> CST-AWSCloudParameters Project </h1> 
-
 An extension of my CST-CloudParameters web application. This adds functionality to the web application to retrieve and filter values from a DynamoDB table, whose name is stored in AWS Systems Manager Parameter Store. 
 
 <h2> 📄 Summary </h2> 
