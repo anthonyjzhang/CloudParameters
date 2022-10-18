@@ -1,13 +1,17 @@
-# CloudParameters-DynamoDB
-An extension of my CST-CloudParameters web application. This adds functionality to the web application to retrieve and filter values from a DynamoDB table, whose name is stored in AWS Systems Manager Parameter Store. 
+# CST-CloudParametersWithDynamoDB
+This is an extension of my CST-CloudParameters web application. This adds functionality to the web application to retrieve and filter values from a DynamoDB table, whose name is stored in AWS Systems Manager Parameter Store. 
 
 <h2> 📄 Summary </h2> 
 
-This project was a part of my internship for Cell Singaling Technologies (CST). At CST, I studied under CST's Director of Software Engineering. I first learned how CST leverages Amazon Web Services (AWS) to manage and build their digital infrastructure. I earned the AWS Certified Cloud Practitioner Certification and gained hands-on experience with foundational AWS services such as EC2, S3, VPCs, Systems Manager, IAM, Lambda, and more. The purpose of this project is to retrieve and filter parameters stored in Parameter Store in AWS Systems Managager. My code first securely authenticates an AWS account using an AWS access key and secret key. Note that these credentials are not hard coded into the program, as this would not be secure. Then, the program sets the AWS region and makes a request to AWS Systems Manager Parameter Store. The program implements three API functions. The first function, listParameters, lists all of the parameters in the associated AWS account's Parameter Store. The second function, listKeys, lists all of the parameters in the associated AWS account's Parameter Store that have the input prefix. The third function, getParameter, retrieves the value associated with the input parameter key in the associated AWS account's parameter store.
+This project implements all of the function in my CST-CloudParameters project. However, this project adds an additional function that adds integration with Amazon DynamoDB Tables to the web application. This function, parameterKeysGet, takes two parameters: a key to a parameter in Parameter Store, and a key to a value in an Amazon DynamoDB Table. The value of the input key in Parameter Store should hold the name of a valid DynamoDB Table in the same AWS account. The second parameter should be a valid key in the same DynamoDB Table. After authenticating the AWS account and setting a Region, the program uses a SSm Client to make a request to Amazon Systems Manager Parameter Store to retrieve the value associated with the input parameter key. The program stores the reponse, which should be the table name of a valid DynamoDB Table, and then uses this value to make a request to DynamoDB. Using a DynamoDB client, the program requests to retrieve the item associated with the input table key in the stored DynamoDB table name. The program receives the response, filters out unecessary metadata, then returns the item. 
 
 <h2> 💻 Softwares and Technologies </h2> 
 
-This project (programmed in Java) uses Maven to build the code and utilizes the Spring Framework (Spring Boot). These technologies are essential to allowing the application to run. Maven converts the API specifications written in OpenAPI to source code. Spring Boot helps manage the dependencies in the application. In order to communicate with AWS, the program uses the AWS SDK for Java. 
+- Amazon Web Services (AWS)
+- AWS SDK for Java
+- Maven
+- Spring Boot
+
 
 
 
