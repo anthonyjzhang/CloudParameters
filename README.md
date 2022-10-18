@@ -1,5 +1,5 @@
 # AWSCloudParametersWithDynamoDB Project
-This is an extension of my CST-CloudParameters web application. This adds functionality to the web application to retrieve and filter values from a DynamoDB table, whose name is stored in AWS Systems Manager Parameter Store. 
+This is an extension of my AWSCloudParameters application. This adds functionality to the web application to retrieve and filter values from a DynamoDB table, whose name is stored in AWS Systems Manager Parameter Store. 
 
 <h2> 📄 Summary </h2> 
 
