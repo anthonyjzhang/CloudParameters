@@ -6,7 +6,7 @@ The purpose of this project is to retrieve and filter parameters stored in Param
 
 Then, integration with Amazon DynamoDB Tables was added to the web application. This function, parameterKeysGet, takes two parameters: a key to a parameter in Parameter Store, and a key to a value in an Amazon DynamoDB Table. The value of the input key in Parameter Store holds the name of a valid DynamoDB Table in the same AWS account. The second parameter should be a valid key in the same DynamoDB Table. After authenticating the AWS account and setting an AWS Region, the program uses a SSm Client to make a request to Amazon Systems Manager Parameter Store to retrieve the value associated with the input parameter key. The program stores the reponse, the table name of a valid DynamoDB Table, and then uses this value to make a request to DynamoDB. Using a DynamoDB client, the program requests to retrieve the item associated with the input table key in the stored DynamoDB table name. The program receives the response, filters out unecessary metadata, then returns the item. 
 
-<h2> 💻 Softwares and Technologies </h2> 
+## Softwares and Technologies  
 
 <div align="center">
   <a href = "https://www.credly.com/earner/earned/badge/6bb63137-7db5-4f17-838b-b2f95a1d874d" target = "_blank"><img src="https://images.credly.com/size/680x680/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" width = "160" height = "160"/></a>
